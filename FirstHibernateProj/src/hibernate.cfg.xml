@@ -31,6 +31,8 @@
     <!-- Drop and re-create the database schema on startup -->
     <property name="hbm2ddl.auto">create</property>
 
+	<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+	
 	<mapping class = "org.javabrains.sayantan.dto.UserDetails" />
 
     

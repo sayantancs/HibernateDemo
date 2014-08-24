@@ -21,13 +21,13 @@ public class HibernateTest {
 		//user.setUserId(1);
 		//user.setAddress("first user's address");
 		user.setJoinDate(new Date());
-		user.setDescriptionl("first user's description");
+		user.setDescription("first user's description");
 		
 		user2.setName("second user");
 		//user.setUserId(1);
 		//user2.setAddress("second user's address");
 		user2.setJoinDate(new Date());
-		user2.setDescriptionl("second user's description");
+		user2.setDescription("second user's description");
 
 		Address addr = new Address();
 		addr.setStreet("street name");
@@ -35,9 +35,15 @@ public class HibernateTest {
 		addr.setState("wb");
 		addr.setPincode("700110");
 		
+		Address addr2 = new Address();
+		addr2.setStreet("office street");
+		addr2.setCity("delhi");
+		addr2.setState("delhi");
+		addr2.setPincode("123456");
+		
 		// adding another object in a field
-		user.setAddress(addr);
-		user2.setAddress(addr);
+		user.setHomeAddress(addr);
+		user.setOfficeAddress(addr2);
 		
 		
 		@SuppressWarnings("deprecation")  				
