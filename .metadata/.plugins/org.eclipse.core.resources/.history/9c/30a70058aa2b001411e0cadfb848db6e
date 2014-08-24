@@ -1,0 +1,27 @@
+package org.javabrains.sayantan.hibernate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.javabrains.sayantan.dto.UserDetails;
+
+public class HibernateTest {
+
+	public static void main(String[] args) {
+		UserDetails user = new UserDetails();
+		/*
+		user.setName("second user");
+		user.setUserId(2);
+		*/
+		user.setName("first user");
+		user.setUserId(1);
+
+		@SuppressWarnings("deprecation")
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory(); 
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.save(user);
+		session.getTransaction().commit();	
+	}
+
+}

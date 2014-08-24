@@ -1,0 +1,5 @@
+package org.javabrains.sayantan.dto;
+
+public class UserDetails {
+
+}

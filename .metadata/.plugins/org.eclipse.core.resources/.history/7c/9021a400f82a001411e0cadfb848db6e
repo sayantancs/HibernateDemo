@@ -1,0 +1,11 @@
+package org.javabrains.sayantan.hibernate;
+
+import org.javabrains.sayantan.dto.UserDetails;
+
+public class HibernateTest {
+
+	public static void main(String[] args) {
+		UserDetails user = new UserDetails();
+	}
+
+}
