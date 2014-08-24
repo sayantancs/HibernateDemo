@@ -32,12 +32,13 @@ public class HibernateTest {
 		session.close();
 		
 		user = null;
-		// Retrieve
+		// Retrieve from database with ORM
 		session = sessionFactory.openSession();
 		session.beginTransaction();
 		user = (UserDetails) session.get(UserDetails.class, 1);	// 1 is primary key of the object to be retrieved
 		System.out.println("Username retrieved is:" + user.getName());
 		session.close();
+		
 	}
 
 }
