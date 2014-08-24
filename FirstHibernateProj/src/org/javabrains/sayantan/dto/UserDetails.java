@@ -8,7 +8,8 @@ import javax.persistence.*;
 @Entity
 @Table (name = "USER_DETAILS" )
 public class UserDetails {
-	@Id 
+	@Id							// Primary key
+	@GeneratedValue				// Auto increment primary key
 	//@Column (name="USER_ID")
 	private int userId;
 	//@Column (name="USER_NAME")
@@ -17,7 +18,7 @@ public class UserDetails {
 	@Temporal (TemporalType.DATE) 	// can save time or timestamp too
 	private Date joinDate ; 		
 	private String address;
-	@Lob							// Large Object
+	/*  @Lob - Large Object */
 	private String description;
 	
 	public int getUserId() {
