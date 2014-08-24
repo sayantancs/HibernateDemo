@@ -16,8 +16,9 @@ public class UserDetails {
 	@Basic							// default, if @Transient, then do not persist
 	private String name ;
 	@Temporal (TemporalType.DATE) 	// can save time or timestamp too
-	private Date joinDate ; 		
-	private String address;
+	private Date joinDate ;
+	@Embedded
+	private Address address;
 	/*  @Lob - Large Object */
 	private String description;
 	
@@ -39,10 +40,10 @@ public class UserDetails {
 	public void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
 	}
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 	public String getDescriptionl() {
