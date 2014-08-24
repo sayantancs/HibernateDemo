@@ -11,15 +11,22 @@ public class HibernateTest {
 
 	public static void main(String[] args) {
 		UserDetails user = new UserDetails();
+		UserDetails user2 = new UserDetails();
 		/*
 		user.setName("second user");
 		user.setUserId(2);
 		*/
 		user.setName("first user");
-		user.setUserId(1);
+		//user.setUserId(1);
 		user.setAddress("first user's address");
 		user.setJoinDate(new Date());
 		user.setDescriptionl("first user's description");
+		
+		user2.setName("second user");
+		//user.setUserId(1);
+		user2.setAddress("second user's address");
+		user2.setJoinDate(new Date());
+		user2.setDescriptionl("second user's description");
 
 		@SuppressWarnings("deprecation")  				
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory(); 
@@ -28,17 +35,20 @@ public class HibernateTest {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(user);
+		session.save(user2);
 		session.getTransaction().commit();	
 		session.close();
 		
-		user = null;
+		
 		// Retrieve from database with ORM
+		/*
+		user = null;
 		session = sessionFactory.openSession();
 		session.beginTransaction();
 		user = (UserDetails) session.get(UserDetails.class, 1);	// 1 is primary key of the object to be retrieved
 		System.out.println("Username retrieved is:" + user.getName());
 		session.close();
-		
+		*/
 	}
 
 }
